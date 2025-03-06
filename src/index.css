@@ -22,13 +22,13 @@ body {
 
 @layer base {
   h1 {
-    @apply text-8xl text-center;
+    @apply text-6xl sm:text-8xl text-center;
   }
   h2 {
-    @apply text-lg;
+    @apply sm:text-lg;
   }
   h3 {
-    @apply text-6xl text-center;
+    @apply text-4xl sm:text-6xl text-center;
   }
 }
 
