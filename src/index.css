@@ -38,7 +38,7 @@ body {
     @apply flex border-1 border-(--text)/10 w-sm px-4;
   }
   .parent-container {
-    @apply flex flex-col w-sm items-center;
+    @apply flex flex-col w-sm items-center m-auto;
   }
   .navbar {
     @apply fixed bg-(--background) flex w-sm h-12 px-4 border-b-1 border-(--text)/10   items-center justify-between text-xl font-semibold;

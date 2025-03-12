@@ -18,13 +18,7 @@ const NavBar = () => {
         <div>
           {/* Mobile Menu */}
           {menuOpen && (
-            <div
-              className={`mobile-menu transition-transform duration-500 ease-in-out overflow-hidden ${
-                menuOpen
-                  ? "translate-y-0 opacity-100 max-h-screen"
-                  : "-translate-y-full opacity-0 max-h-0"
-              }`}
-            >
+            <div className="mobile-menu">
               <p className="">misión</p>
               <p className="">componentes</p>
               <p className="">contacto</p>
