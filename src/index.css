@@ -35,15 +35,15 @@ body {
 
 @layer components {
   .divider {
-    @apply flex border-1 border-(--text)/10 w-sm;
+    @apply flex border-1 border-(--text)/10 w-sm px-4;
   }
   .parent-container {
-    @apply flex flex-col w-sm items-center m-auto;
+    @apply flex flex-col w-sm items-center;
   }
   .navbar {
-    @apply fixed bg-(--background) flex w-sm h-12 px-2 border-b-1 border-(--text)/10   items-center justify-between text-xl font-semibold;
+    @apply fixed bg-(--background) flex w-sm h-12 px-4 border-b-1 border-(--text)/10   items-center justify-between text-xl font-semibold;
   }
   .mobile-menu {
-    @apply flex flex-col fixed top-12 w-sm h-dvh left-0 right-0 m-auto bg-(--background) font-Cormorant gap-4 p-2 text-lg;
+    @apply flex flex-col fixed top-12 w-sm h-dvh left-0 right-0 m-auto bg-(--background) font-Cormorant gap-4 p-4 text-lg;
   }
 }
