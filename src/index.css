@@ -1,8 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
 @import "tailwindcss";
-
-* {
-  @apply font-satoshi;
-}
 
 body {
   background-color: var(--background);
@@ -10,8 +7,9 @@ body {
 }
 
 @theme {
-  --font-satoshi: Satoshi, sans-serif;
-  --font-poppins: Poppins, sans-serif;
+  --font-DM: "DM Serif Display", serif;
+  --font-DM-sans: "DM Sans", sans-serif;
+  --font-Cormorant: "Cormorant Infant", serif;
 
   --text: oklch(16.37% 0.006 338.04);
   --background: oklch(97.2% 0.002 345.21);
@@ -22,20 +20,30 @@ body {
 
 @layer base {
   h1 {
-    @apply text-6xl sm:text-8xl text-center;
+    @apply font-DM text-6xl sm:text-8xl text-center;
   }
   h2 {
-    @apply sm:text-lg;
+    @apply font-DM-sans sm:text-lg;
   }
   h3 {
-    @apply text-4xl sm:text-6xl text-center;
+    @apply font-DM text-4xl sm:text-6xl text-center;
+  }
+  h4 {
+    @apply font-DM-sans;
   }
 }
 
 @layer components {
-  /* Add component styles here */
-}
-
-@layer utilities {
-  /* Add utility styles here */
+  .divider {
+    @apply flex border-1 border-(--text)/10 w-sm;
+  }
+  .parent-container {
+    @apply flex flex-col w-sm items-center m-auto;
+  }
+  .navbar {
+    @apply fixed bg-(--background) flex w-sm h-12 px-2 border-b-1 border-(--text)/10   items-center justify-between text-xl font-semibold;
+  }
+  .mobile-menu {
+    @apply flex flex-col fixed top-12 w-sm h-dvh left-0 right-0 m-auto bg-(--background) font-Cormorant gap-4 p-2 text-lg;
+  }
 }

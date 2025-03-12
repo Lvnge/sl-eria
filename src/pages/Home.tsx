@@ -1,28 +1,13 @@
+import NavBar from "../components/navBar/NavBar";
 const Home = () => {
   return (
-    <div className="flex flex-col items-center  text-(--text) ">
-      <div className="p-2 w-full border-b-1 border-(--text)/10 h-fit flex items-center">
-        <div className="w-full justify-center flex flex-col items-center space-x-1 text-center">
-          <img src="/sl-playground-logo.svg" alt="logo" className="w-8 h-8" />
-          <p className="text-xl">sl-eria</p>
-        </div>
-        {/*<div className=" ml-auto mr-6">
-          <ul className="flex justify-between space-x-4">
-            <li>Componentes</li>
-            <li>Secciones</li>
-            <li>Acerca de</li>
-            <li>Contacto</li>
-          </ul>
-        </div>*/}
-      </div>
-      <div className="flex flex-col items-center w-sm sm:w-full">
-        <div
-          className="sm:h-72 sm:m-16 sm:w-full
-        m-8
-        w-sm flex flex-col items-center"
-        >
-          <div className="flex flex-col items-center">
-            <h1 className="flex text-wrap">
+    <div className="parent-container ">
+      <NavBar />
+
+      <div className="flex flex-col items-center mt-16">
+        <div className="w-sm flex flex-col items-center mb-8">
+          <div className="flex flex-col items-center ">
+            <h1 className="flex text-wrap ">
               Tu&nbsp;
               <p className="sm:text-8xl text-6xl bg-linear-120 from-(--primary) to-(--secondary) text-transparent bg-clip-text">
                 arte
@@ -31,21 +16,21 @@ const Home = () => {
             <h1>merece un espacio</h1>
           </div>
           <div className=" md:w-6xl">
-            <h2 className="text-center mt-6 text-xl">
+            <h2 className="text-center mt-6 text-xl ">
               Si quieres compartir tu trabajo en línea pero no sabes por dónde
-              empezar, te ayudo a crear tu portafolio. <br /> Tú solo traes el
-              contenido—imágenes, textos, lo que quieras mostrar—y yo me encargo
-              de darle forma.
+              empezar, te ayudo a crear tu portafolio.
             </h2>
           </div>
         </div>
-        <div className="flex border-1 border-(--text)/10 w-3/4"></div>
-        <div className="m-12 ">
-          <div className="flex flex-col items-center">
+        <div className="divider"></div>
+        <div className="p-8  ">
+          <div className=" ">
             <h3>Cómo funciona</h3>
-            <ul className="mt-6 text-xl space-y-2 text-center">
+            <ul className="mt-4  text-center  w-full">
               <li>
-                🌿 Te muestro algunas ideas – Diseños base para inspirarte.
+                <h4>
+                  🌿 Te muestro algunas ideas – Diseños base para inspirarte.
+                </h4>
               </li>
               <li>
                 🎨 Personalizamos juntos – Colores, tipografía, estructura… lo
@@ -63,7 +48,7 @@ const Home = () => {
             </ul>
           </div>
         </div>
-        <div className="flex border-1 border-(--text)/10 w-3/4"></div>
+        <div className="divider"></div>
         <div className="m-12">
           <div className="flex flex-col items-center text-xl">
             <h3>Para quién es esto</h3>
@@ -101,7 +86,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <div className="flex border-1 border-(--text)/10 w-3/4"></div>
+        <div className="divider"></div>
       </div>
 
       <div className="h-12 sm:h-56 w-full text-center flex flex-col justify-end items-center">
