@@ -38,19 +38,19 @@ const NavBar = () => {
               <p className="">componentes</p>
               <p className="">contacto</p>
 
-              <div className="flex flex-col gap-2 text-sm mt-auto mb-16">
-                <p className="text-lg">acerca de mí</p>
-                <p>román montes, 26</p>
-                <p className="flex">
+              <div className="flex flex-col gap-2 text-sm mt-auto mb-auto">
+                <p className="text-lg select-none">acerca de mí</p>
+                <p className="select-none">román montes, 26</p>
+                <p className="flex select-none">
                   ig:&nbsp;
-                  <p className="underline text-(--primary)"> @rmg.wav</p>
+                  <p className="custom-link"> @rmg.wav</p>
                 </p>
-                <p className="flex">
+                <p className="flex select-none">
                   web:&nbsp;
-                  <p className="underline text-(--primary)">silentlung.com</p>
+                  <p className="custom-link">silentlung.com</p>
                 </p>
-                <p>loc: gdl, mx</p>
-                <p>eng, sp</p>
+                <p className="select-none">loc: gdl, mx</p>
+                <p className="select-none">eng, sp</p>
               </div>
             </div>
           )}

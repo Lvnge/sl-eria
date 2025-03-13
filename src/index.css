@@ -16,6 +16,7 @@ body {
   --primary: oklch(59.6% 0.044 340.84);
   --secondary: oklch(78.94% 0.027 128.85);
   --accent: oklch(71.34% 0.033 155.69);
+  --link: oklch(40% 0.2 300);
 }
 
 @layer base {
@@ -35,15 +36,18 @@ body {
 
 @layer components {
   .divider {
-    @apply flex border-1 border-(--text)/10 w-sm px-4;
+    @apply flex border-1 border-(--text)/10 w-full px-4;
   }
   .parent-container {
-    @apply flex flex-col w-sm items-center m-auto;
+    @apply flex flex-col max-w-90 w-full items-center m-auto overflow-hidden;
   }
   .navbar {
-    @apply fixed bg-(--background) flex w-sm h-12 px-4 border-b-1 border-(--text)/10   items-center justify-between text-xl font-semibold;
+    @apply fixed bg-(--background) flex max-w-90 w-full  h-12 px-4 border-b-1 border-(--text)/10   items-center justify-between text-xl font-semibold;
   }
   .mobile-menu {
-    @apply flex flex-col fixed top-12 w-sm h-screen left-0 right-0 m-auto bg-(--background) font-Cormorant gap-4 p-4 text-lg;
+    @apply flex flex-col fixed top-12 max-w-90 w-full h-screen left-0 right-0 m-auto bg-(--background) font-Cormorant gap-3 p-4 text-lg;
+  }
+  .custom-link {
+    @apply underline text-(--link);
   }
 }
