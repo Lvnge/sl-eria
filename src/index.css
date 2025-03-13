@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @import "tailwindcss";
 
 body {
@@ -7,9 +7,8 @@ body {
 }
 
 @theme {
-  --font-DM: "DM Serif Display", serif;
-  --font-DM-sans: "DM Sans", sans-serif;
   --font-Cormorant: "Cormorant Infant", serif;
+  --font-Lato: "Lato", sans-serif;
 
   --text: oklch(16.37% 0.006 338.04);
   --background: oklch(97.2% 0.002 345.21);
@@ -21,16 +20,16 @@ body {
 
 @layer base {
   h1 {
-    @apply font-DM text-6xl sm:text-8xl text-center;
+    @apply font-Cormorant text-7xl;
   }
   h2 {
-    @apply font-DM-sans sm:text-lg;
+    @apply font-Lato text-xl font-light text-center;
   }
   h3 {
-    @apply font-DM text-4xl sm:text-6xl text-center;
+    @apply font-Cormorant font-medium text-3xl text-center;
   }
   h4 {
-    @apply font-DM-sans;
+    @apply font-Lato font-medium text-base text-center;
   }
 }
 
@@ -49,5 +48,8 @@ body {
   }
   .custom-link {
     @apply underline text-(--link);
+  }
+  .home-section {
+    @apply flex flex-col items-center my-8 w-full;
   }
 }

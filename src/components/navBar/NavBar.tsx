@@ -40,17 +40,18 @@ const NavBar = () => {
 
               <div className="flex flex-col gap-2 text-sm mt-auto mb-auto">
                 <p className="text-lg select-none">acerca de mí</p>
-                <p className="select-none">román montes, 26</p>
+                <p className="select-none">román</p>
                 <p className="flex select-none">
                   ig:&nbsp;
-                  <p className="custom-link"> @rmg.wav</p>
+                  <span className="custom-link"> @rmg.wav</span>
                 </p>
                 <p className="flex select-none">
                   web:&nbsp;
-                  <p className="custom-link">silentlung.com</p>
+                  <span className="custom-link">silentlung.com</span>
                 </p>
+                <p className="select-none">lang: eng, sp</p>
                 <p className="select-none">loc: gdl, mx</p>
-                <p className="select-none">eng, sp</p>
+                <p>1998</p>
               </div>
             </div>
           )}
