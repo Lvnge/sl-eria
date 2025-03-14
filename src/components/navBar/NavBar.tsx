@@ -1,35 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const NavBar = () => {
+interface NavBarProps {
+  isDark: boolean;
+  toggleTheme: () => void;
+}
+const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  console.log(menuOpen);
-  const [isDark, setIsDark] = useState(false);
-
-  // Set the theme on initial load
-  useEffect(() => {
-    const currentTheme = localStorage.getItem("theme");
-    if (currentTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDark(false);
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-
-  // Toggle theme and save to localStorage
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
-      localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
-    }
-  };
 
   return (
     <>

@@ -1,9 +1,6 @@
-import NavBar from "../components/navBar/NavBar";
 const Home = () => {
   return (
     <div className="parent-container ">
-      <NavBar />
-
       <div className="flex flex-col items-center mt-12 w-full">
         <div className="home-section">
           <h1 className="text-center">
