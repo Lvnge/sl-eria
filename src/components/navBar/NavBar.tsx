@@ -33,7 +33,6 @@ const NavBar = () => {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="fixed w-full h-12 top-0 left-0 right-0 m-auto bg-(--background) dark:bg-(--d-background) transition-colors duration-400 z-9"></div>
         <div className="navbar z-10">
           <p className="italic font-Cormorant">sl-eria</p>
           <div className="flex gap-2 items-center relative">
