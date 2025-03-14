@@ -1,11 +1,18 @@
+// src/App.tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import NavBar from "./components/navBar/NavBar";
 
-const App = () => {
+function App() {
   return (
-    <>
-      <Home />
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* Add more routes here */}
+      </Routes>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;

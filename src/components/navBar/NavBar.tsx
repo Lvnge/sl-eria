@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const NavBar = () => {
@@ -34,7 +35,12 @@ const NavBar = () => {
     <>
       <div className="flex flex-col items-center">
         <div className="navbar z-10">
-          <p className="italic font-Cormorant">sl-eria</p>
+          <button>
+            <Link to="/" className="italic font-Cormorant">
+              sl-eria
+            </Link>
+          </button>
+
           <div className="flex gap-2 items-center relative">
             <button onClick={toggleTheme}>
               <motion.div
@@ -97,9 +103,9 @@ const NavBar = () => {
             exit={{ y: "-100vh" }} // Slide out to the top when menuOpen is false
             transition={{ type: "tween", duration: 0.55 }} // Smooth transition from top to bottom
           >
-            <p className="">diseños</p>
-            <p className="">proyectos</p>
-            <p className="">misión</p>
+            <p>diseños</p>
+            <p>proyectos</p>
+            <p>misión</p>
 
             <div className="flex flex-col gap-2 text-sm mt-auto mb-auto">
               <p className="text-lg select-none">acerca de mí</p>

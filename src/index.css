@@ -45,16 +45,16 @@
 
 @layer components {
   .divider {
-    @apply flex border-1 border-(--text)/10 dark:border-(--d-text)/20 w-full px-4;
+    @apply flex border-b-1 border-(--text)/10 dark:border-(--d-text)/20 w-full px-4;
   }
   .parent-container {
     @apply flex flex-col max-w-90 w-full items-center m-auto overflow-hidden;
   }
   .navbar {
-    @apply fixed flex max-w-90 w-full  h-12 px-4 border-b-1 border-(--text)/10 dark:border-(--d-text)/20 justify-between  items-center text-xl font-semibold transition-colors duration-400 backdrop-blur-sm;
+    @apply fixed flex max-w-90 w-full h-12 px-4 border-b-1 border-(--text)/10 dark:border-(--d-text)/20 justify-between  items-center text-xl font-semibold transition-colors duration-400 ease-in-out z-10 bg-(--background) dark:bg-(--d-background);
   }
   .mobile-menu {
-    @apply flex flex-col fixed  max-w-90 w-full h-screen left-0 right-0 m-auto bg-(--background) dark:bg-(--d-background) font-Cormorant gap-3 p-4 pt-14 text-lg z-9 transition-colors duration-400;
+    @apply flex flex-col fixed  max-w-90 w-full h-screen left-0 right-0 m-auto bg-(--background) dark:bg-(--d-background) font-Cormorant gap-3 p-4 pt-14 text-lg z-9 transition-colors duration-400 ease-in-out;
   }
   .custom-link {
     @apply underline;
