@@ -147,7 +147,7 @@ const Home = () => {
             <a
               href="https://www.instagram.com/rmg.wav/"
               target="_blank"
-              className="font-Lato mt-8 m-auto w-fit bg-(--primary) rounded-full text-(--buttonfont) dark:text-(--d-buttonfont) cursor-pointer
+              className="font-Lato mt-8 m-auto w-fit bg-(--primary) rounded-full text-(--buttonfont) cursor-pointer
               drop-shadow-lg"
             >
               <div className="flex items-center justify-center h-full px-4 py-2 ">
