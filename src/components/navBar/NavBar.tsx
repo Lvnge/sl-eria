@@ -91,17 +91,17 @@ const NavBar = () => {
         <div>
           {/* Mobile Menu */}
           <motion.div
-            className="mobile-menu"
+            className="mobile-menu "
             initial={{ y: "-100vh" }} // Start off-screen, just above the visible area
             animate={{ y: menuOpen ? 0 : "-94.5vh" }} // Slide in from the top, or slide out to the top
             exit={{ y: "-100vh" }} // Slide out to the top when menuOpen is false
             transition={{ type: "tween", duration: 0.55 }} // Smooth transition from top to bottom
           >
-            <p className="">diseños</p>
-            <p className="">proyectos</p>
-            <p className="">misión</p>
+            <p className="transition-colors duration-0">diseños</p>
+            <p className="transition-colors duration-0">proyectos</p>
+            <p className="transition-colors duration-0">misión</p>
 
-            <div className="flex flex-col gap-2 text-sm mt-auto mb-auto">
+            <div className="flex flex-col gap-2 text-sm mt-auto mb-auto transition-colors duration-0">
               <p className="text-lg select-none">acerca de mí</p>
               <p className="select-none">román</p>
               <p className="flex select-none">
