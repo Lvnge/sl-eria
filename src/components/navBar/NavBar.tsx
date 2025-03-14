@@ -33,6 +33,7 @@ const NavBar = () => {
   return (
     <>
       <div className="flex flex-col items-center">
+        <div className="fixed w-full h-12 top-0 left-0 right-0 m-auto bg-(--background) dark:bg-(--d-background) transition-colors duration-400 z-9"></div>
         <div className="navbar z-10">
           <p className="italic font-Cormorant">sl-eria</p>
           <div className="flex gap-2 items-center relative">
@@ -93,7 +94,7 @@ const NavBar = () => {
           <motion.div
             className="mobile-menu "
             initial={{ y: "-100vh" }} // Start off-screen, just above the visible area
-            animate={{ y: menuOpen ? 0 : "-94.5vh" }} // Slide in from the top, or slide out to the top
+            animate={{ y: menuOpen ? 0 : "-100vh" }} // Slide in from the top, or slide out to the top
             exit={{ y: "-100vh" }} // Slide out to the top when menuOpen is false
             transition={{ type: "tween", duration: 0.55 }} // Smooth transition from top to bottom
           >
