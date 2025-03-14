@@ -12,7 +12,7 @@
   --primary: oklch(57.76% 0.055 287.09);
   --secondary: oklch(77.29% 0.028 304.73);
   --accent: oklch(69.39% 0.045 312.17);
-  --buttonfont: oklch(96.37% 0.0017 247.84);
+  --buttonfont: oklch(97.37% 0.003 286.35);
 
   --d-text: oklch(97.37% 0.003 286.35);
   --d-background: oklch(10.83% 0.007 285.17);
@@ -51,7 +51,7 @@
     @apply flex flex-col max-w-90 w-full items-center m-auto overflow-hidden;
   }
   .navbar {
-    @apply fixed bg-(--background) dark:bg-(--d-background) flex max-w-90 w-full  h-12 px-4 border-b-1 border-(--text)/10 dark:border-(--d-text)/20   items-center justify-between text-xl font-semibold transition-colors duration-400;
+    @apply fixed bg-(--background) dark:bg-(--d-background) flex max-w-90 w-full  h-12 px-4 border-b-1 border-(--text)/10 dark:border-(--d-text)/20   items-center justify-between text-xl font-semibold transition-colors duration-100;
   }
   .mobile-menu {
     @apply flex flex-col fixed top-12 max-w-90 w-full h-screen left-0 right-0 m-auto bg-(--background) dark:bg-(--d-background) font-Cormorant gap-3 p-4 text-lg z-9 transition-colors duration-400;
