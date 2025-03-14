@@ -1,24 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @import "tailwindcss";
 
-body {
-  background-color: var(--background);
-  color: var(--text);
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-Cormorant: "Cormorant Infant", serif;
   --font-Lato: "Lato", sans-serif;
 
-  --text: oklch(16.37% 0.006 338.04);
-  --background: oklch(97.2% 0.002 345.21);
-  --primary: oklch(59.6% 0.044 340.84);
-  --secondary: oklch(78.94% 0.027 128.85);
-  --accent: oklch(71.34% 0.033 155.69);
-  --link: oklch(40% 0.2 300);
+  --text: oklch(12.97% 0.005 285.67);
+  --background: oklch(98.27% 0.003 286.35);
+  --primary: oklch(57.76% 0.055 287.09);
+  --secondary: oklch(77.29% 0.028 304.73);
+  --accent: oklch(69.39% 0.045 312.17);
+  --buttonfont: oklch(90% 0.02 0);
+
+  --d-text: oklch(97.37% 0.003 286.35);
+  --d-background: oklch(10.83% 0.007 285.17);
+  --d-primary: oklch(52.61% 0.056 286.84);
+  --d-secondary: oklch(36.82% 0.034 303.97);
+  --d-accent: oklch(45.19% 0.049 311.84);
+  --d-buttonfont: oklch(90% 0.02 0);
 }
 
 @layer base {
+  body {
+    @apply bg-(--background) dark:bg-(--d-background) text-(--text) dark:text-(--d-text) transition-colors duration-400;
+  }
   h1 {
     @apply font-Cormorant text-7xl;
   }
@@ -38,19 +45,19 @@ body {
 
 @layer components {
   .divider {
-    @apply flex border-1 border-(--text)/10 w-full px-4;
+    @apply flex border-1 border-(--text)/10 dark:border-(--d-text)/20 w-full px-4;
   }
   .parent-container {
     @apply flex flex-col max-w-90 w-full items-center m-auto overflow-hidden;
   }
   .navbar {
-    @apply fixed bg-(--background) flex max-w-90 w-full  h-12 px-4 border-b-1 border-(--text)/10   items-center justify-between text-xl font-semibold;
+    @apply fixed bg-(--background) dark:bg-(--d-background) flex max-w-90 w-full  h-12 px-4 border-b-1 border-(--text)/10 dark:border-(--d-text)/20   items-center justify-between text-xl font-semibold transition-colors duration-400;
   }
   .mobile-menu {
-    @apply flex flex-col fixed top-12 max-w-90 w-full h-screen left-0 right-0 m-auto bg-(--background) font-Cormorant gap-3 p-4 text-lg z-9;
+    @apply flex flex-col fixed top-12 max-w-90 w-full h-screen left-0 right-0 m-auto bg-(--background) dark:bg-(--d-background) font-Cormorant gap-3 p-4 text-lg z-9 transition-colors duration-400;
   }
   .custom-link {
-    @apply underline text-(--link);
+    @apply underline;
   }
   .home-section {
     @apply flex flex-col my-8 w-full;

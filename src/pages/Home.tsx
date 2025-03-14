@@ -62,11 +62,11 @@ const Home = () => {
                   <g
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-width="1.5"
+                    strokeLinecap="round"
+                    strokeWidth="1.5"
                   >
                     <path
-                      stroke-linejoin="round"
+                      strokeLinejoin="round"
                       d="M12 16v6m0-6l2 2m-2-2l-2 2"
                     />
                     <path d="M22 13.353c0 2.343-1.444 4.353-3.5 5.207M14.381 8.027a5.8 5.8 0 0 1 1.905-.321c.654 0 1.283.109 1.87.309m-11.04 2.594a4.4 4.4 0 0 0-.83-.08C3.919 10.53 2 12.426 2 14.765c0 1.896 1.261 3.501 3 4.041m2.116-8.197a5.6 5.6 0 0 1-.354-1.962C6.762 5.528 9.32 3 12.476 3c2.94 0 5.361 2.194 5.68 5.015m-11.04 2.594a4.3 4.3 0 0 1 1.55.634m9.49-3.228A5.7 5.7 0 0 1 20.463 9.5" />
@@ -109,9 +109,9 @@ const Home = () => {
                   height="24"
                   viewBox="0 0 24 24"
                 >
-                  <g fill="none" stroke="currentColor" stroke-width="1.5">
+                  <g fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M9 12a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0Z" />
-                    <path stroke-linecap="round" d="M14 6.5L9 10m5 7.5L9 14" />
+                    <path strokeLinecap="round" d="M14 6.5L9 10m5 7.5L9 14" />
                     <path d="M19 18.5a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0Zm0-13a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0Z" />
                   </g>
                 </svg>
@@ -147,7 +147,7 @@ const Home = () => {
             <a
               href="https://www.instagram.com/rmg.wav/"
               target="_blank"
-              className="font-Lato mt-8 m-auto w-fit bg-(--text) rounded-full text-(--background) cursor-pointer
+              className="font-Lato mt-8 m-auto w-fit bg-(--primary) rounded-full text-(--buttonfont) dark:text-(--d-buttonfont) cursor-pointer
               drop-shadow-lg"
             >
               <div className="flex items-center justify-center h-full px-4 py-2 ">
