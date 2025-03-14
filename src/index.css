@@ -51,10 +51,10 @@
     @apply flex flex-col max-w-90 w-full items-center m-auto overflow-hidden;
   }
   .navbar {
-    @apply fixed flex max-w-90 w-full  h-12 px-4 border-b-1 border-(--text)/10 dark:border-(--d-text)/20 bg-(--background) dark:bg-(--d-background)   items-center justify-between text-xl font-semibold transition-colors duration-400 !important;
+    @apply fixed flex max-w-90 w-full  h-12 px-4 border-b-1 border-(--text)/10 dark:border-(--d-text)/20 bg-(--background) dark:bg-(--d-background)   items-center justify-between text-xl font-semibold transition-colors duration-400 important;
   }
   .mobile-menu {
-    @apply flex flex-col fixed  max-w-90 w-full h-screen left-0 right-0 m-auto bg-(--background) dark:bg-(--d-background) font-Cormorant gap-3 p-4 pt-14 text-lg z-8 transition-colors duration-400 !important;
+    @apply flex flex-col fixed  max-w-90 w-full h-screen left-0 right-0 m-auto bg-(--background) dark:bg-(--d-background) font-Cormorant gap-3 p-4 pt-14 text-lg z-8 transition-colors duration-400 important;
   }
   .custom-link {
     @apply underline;
