@@ -42,7 +42,7 @@ const NavBar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0 }}
+                transition={{ duration: 0.4 }}
                 className="flex items-center justify-center"
               >
                 {isDark ? (
@@ -65,7 +65,6 @@ const NavBar = () => {
                   </svg>
                 ) : (
                   // Light mode (moon icon)
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -83,7 +82,7 @@ const NavBar = () => {
             </button>
 
             <button onClick={() => setMenuOpen(!menuOpen)}>
-              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16 transition-colors">
+              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16 transition-colors duration-400 ease-in-out">
                 {menuOpen ? "cerrar" : "menú"}
               </p>
             </button>
