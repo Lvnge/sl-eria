@@ -36,7 +36,11 @@ const NavBar = () => {
       <div className="flex flex-col items-center">
         <div className="navbar z-10">
           <button>
-            <Link to="/" className="italic font-Cormorant">
+            <Link
+              to="/"
+              onClick={() => setMenuOpen(false)}
+              className="italic font-Cormorant"
+            >
               sl-eria
             </Link>
           </button>
@@ -103,20 +107,38 @@ const NavBar = () => {
             exit={{ y: "-100vh" }} // Slide out to the top when menuOpen is false
             transition={{ type: "tween", duration: 0.55 }} // Smooth transition from top to bottom
           >
-            <p>diseños</p>
-            <p>proyectos</p>
-            <p>misión</p>
+            <Link to="/diseños" onClick={() => setMenuOpen(false)}>
+              diseños
+            </Link>
+            <Link to="/proyectos" onClick={() => setMenuOpen(false)}>
+              proyectos
+            </Link>
+            <Link to="/misión" onClick={() => setMenuOpen(false)}>
+              misión
+            </Link>
 
             <div className="flex flex-col gap-2 text-sm mt-auto mb-auto">
               <p className="text-lg select-none">acerca de mí</p>
               <p className="select-none">román</p>
               <p className="flex select-none">
                 ig:&nbsp;
-                <span className="custom-link">@rmg.wav</span>
+                <Link
+                  to="https://www.instagram.com/rmg.wav/"
+                  target="_blank"
+                  className="custom-link"
+                >
+                  @rmg.wav
+                </Link>
               </p>
               <p className="flex select-none">
                 web:&nbsp;
-                <span className="custom-link">silentlung.com</span>
+                <Link
+                  to="https://silentlung.com"
+                  target="_blank"
+                  className="custom-link"
+                >
+                  silentlung.com
+                </Link>
               </p>
               <p className="select-none">langs: es, eng</p>
               <p className="select-none">loc: gdl, mx</p>
