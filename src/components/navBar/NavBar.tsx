@@ -82,7 +82,7 @@ const NavBar = () => {
             </button>
 
             <button onClick={() => setMenuOpen(!menuOpen)}>
-              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16 transition-colors duration-400 ease-in-out">
+              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16 transition-colors duration-0 ease-in-out">
                 {menuOpen ? "cerrar" : "menú"}
               </p>
             </button>
