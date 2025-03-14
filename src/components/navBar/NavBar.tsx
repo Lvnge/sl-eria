@@ -33,7 +33,7 @@ const NavBar = () => {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="navbar z-10">
+        <div className="navbar z-10 bg-(--background) dark:bg-(--d-background)">
           <p className="italic font-Cormorant">sl-eria</p>
           <div className="flex gap-2 items-center relative">
             <button onClick={toggleTheme}>
@@ -97,9 +97,9 @@ const NavBar = () => {
             exit={{ y: "-100vh" }} // Slide out to the top when menuOpen is false
             transition={{ type: "tween", duration: 0.55 }} // Smooth transition from top to bottom
           >
-            <p className="">misión</p>
             <p className="">diseños</p>
             <p className="">proyectos</p>
+            <p className="">misión</p>
 
             <div className="flex flex-col gap-2 text-sm mt-auto mb-auto">
               <p className="text-lg select-none">acerca de mí</p>
