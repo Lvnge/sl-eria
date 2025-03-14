@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,7 +8,7 @@ const NavBar = () => {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="navbar">
+        <div className="navbar z-10">
           <p className="italic font-Cormorant">sl-eria</p>
           <div className="flex gap-2 items-center relative">
             <svg
@@ -32,29 +33,33 @@ const NavBar = () => {
         </div>
         <div>
           {/* Mobile Menu */}
-          {menuOpen && (
-            <div className="mobile-menu">
-              <p className="">misión</p>
-              <p className="">componentes</p>
-              <p className="">contacto</p>
+          <motion.div
+            className="mobile-menu"
+            initial={{ y: "-100vh" }} // Start off-screen, just above the visible area
+            animate={{ y: menuOpen ? 0 : "-100vh" }} // Slide in from the top, or slide out to the top
+            exit={{ y: "-100vh" }} // Slide out to the top when menuOpen is false
+            transition={{ type: "tween", duration: 0.55 }} // Smooth transition from top to bottom
+          >
+            <p className="">misión</p>
+            <p className="">diseños</p>
+            <p className="">proyectos</p>
 
-              <div className="flex flex-col gap-2 text-sm mt-auto mb-auto">
-                <p className="text-lg select-none">acerca de mí</p>
-                <p className="select-none">román</p>
-                <p className="flex select-none">
-                  ig:&nbsp;
-                  <span className="custom-link"> @rmg.wav</span>
-                </p>
-                <p className="flex select-none">
-                  web:&nbsp;
-                  <span className="custom-link">silentlung.com</span>
-                </p>
-                <p className="select-none">lang: eng, sp</p>
-                <p className="select-none">loc: gdl, mx</p>
-                <p>1998</p>
-              </div>
+            <div className="flex flex-col gap-2 text-sm mt-auto mb-auto">
+              <p className="text-lg select-none">acerca de mí</p>
+              <p className="select-none">román</p>
+              <p className="flex select-none">
+                ig:&nbsp;
+                <span className="custom-link">@rmg.wav</span>
+              </p>
+              <p className="flex select-none">
+                web:&nbsp;
+                <span className="custom-link">silentlung.com</span>
+              </p>
+              <p className="select-none">langs: es, eng</p>
+              <p className="select-none">loc: gdl, mx</p>
+              <p className="select-none">1998</p>
             </div>
-          )}
+          </motion.div>
         </div>
       </div>
     </>
