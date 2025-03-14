@@ -147,10 +147,11 @@ const Home = () => {
             <a
               href="https://www.instagram.com/rmg.wav/"
               target="_blank"
-              className="font-Lato mt-8 m-auto w-fit bg-(--primary) rounded-full text-(--buttonfont) cursor-pointer
-              drop-shadow-lg"
+              className="font-Lato mt-8 m-auto w-fit bg-(--text) dark:bg-(--d-text) rounded-full text-(--background)
+              dark:text-(--d-background) cursor-pointer
+              drop-shadow-lg  shadow-(--text)/40 dark:shadow-(--d-text)/40 transition-colors duration-400"
             >
-              <div className="flex items-center justify-center h-full px-4 py-2 ">
+              <div className="flex items-center justify-center h-full px-4 py-2">
                 Contáctame
               </div>
             </a>
