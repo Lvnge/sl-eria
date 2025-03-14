@@ -97,11 +97,11 @@ const NavBar = () => {
             exit={{ y: "-100vh" }} // Slide out to the top when menuOpen is false
             transition={{ type: "tween", duration: 0.55 }} // Smooth transition from top to bottom
           >
-            <p className="transition-colors duration-0">diseños</p>
-            <p className="transition-colors duration-0">proyectos</p>
-            <p className="transition-colors duration-0">misión</p>
+            <p className="">diseños</p>
+            <p className="">proyectos</p>
+            <p className="">misión</p>
 
-            <div className="flex flex-col gap-2 text-sm mt-auto mb-auto transition-colors duration-0">
+            <div className="flex flex-col gap-2 text-sm mt-auto mb-auto">
               <p className="text-lg select-none">acerca de mí</p>
               <p className="select-none">román</p>
               <p className="flex select-none">
