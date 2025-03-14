@@ -120,7 +120,7 @@ const Home = () => {
           </div>
         </div>
         <div className="divider"></div>
-        <div className="home-section select-none ">
+        <div className="home-section select-none px-2 ">
           <div className="flex flex-col">
             <h3>Para quién es esto</h3>
 
