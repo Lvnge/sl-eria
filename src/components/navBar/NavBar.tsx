@@ -42,7 +42,7 @@ const NavBar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.1 }}
                 className="flex items-center justify-center"
               >
                 {isDark ? (
@@ -83,7 +83,7 @@ const NavBar = () => {
             </button>
 
             <button onClick={() => setMenuOpen(!menuOpen)}>
-              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16 transition-colors duration-400">
+              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16 transition-colors">
                 {menuOpen ? "cerrar" : "menú"}
               </p>
             </button>
