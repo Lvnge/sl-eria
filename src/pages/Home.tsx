@@ -1,6 +1,13 @@
+import { motion } from "framer-motion";
 const Home = () => {
   return (
-    <div className="parent-container ">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.3, delay: 0.5 }}
+      className="parent-container "
+    >
       <div className="flex flex-col items-center mt-12 w-full">
         <div className="home-section">
           <h1 className="text-center">
@@ -160,7 +167,7 @@ const Home = () => {
       <div className="footer">
         <span className="font-Cormorant">&copy;silentlung, 2025</span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
