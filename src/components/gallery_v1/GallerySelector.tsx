@@ -2,11 +2,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const GallerySelector = () => {
-  const fadeTextVariants = {
-    hidden: { opacity: 0, y: -5 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-  };
-
   // sl-eria/ states
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState("seleccionar...");
@@ -19,32 +14,28 @@ const GallerySelector = () => {
   const handleFullReset = () => {
     setSelectedOption("seleccionar...");
     setShowOptions(false);
-    setGallerySelectedVersion("seleccionar...");
+    setGallerySelectedOption("seleccionar...");
     setShowGalleryOptions(false);
-    setVideosSelectedVersion("seleccionar...");
+    setVideosSelectedOption("seleccionar...");
     setShowVideosOptions(false);
   };
 
   // Gallery states
-  const [selectedGalleryVersion, setGallerySelectedVersion] =
+  const [selectedGalleryOption, setGallerySelectedOption] =
     useState("seleccionar...");
   const [showGalleryOptions, setShowGalleryOptions] = useState(false);
   const handleGallerySelect = (galleryversion: string) => {
-    setGallerySelectedVersion(galleryversion);
-    setTimeout(() => {
-      setShowGalleryOptions(false);
-    }, 500);
+    setGallerySelectedOption(galleryversion);
+    setShowGalleryOptions(false);
   };
 
-  // Videos states
-  const [selectedVideosVersion, setVideosSelectedVersion] =
+  // Gallery states
+  const [selectedVideosOption, setVideosSelectedOption] =
     useState("seleccionar...");
   const [showVideosOptions, setShowVideosOptions] = useState(false);
   const handleVideosSelect = (videosversion: string) => {
-    setVideosSelectedVersion(videosversion);
-    setTimeout(() => {
-      setShowVideosOptions(false);
-    }, 500);
+    setVideosSelectedOption(videosversion);
+    setShowVideosOptions(false);
   };
 
   return (
@@ -53,15 +44,16 @@ const GallerySelector = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ delay: 0.7, duration: 1 }}
+        transition={{ delay: 1, duration: 1 }}
       >
         <button onClick={handleFullReset}>sl-eria/</button>
       </motion.div>
+      {/* Media selector */}
       <motion.ul
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ delay: 1, duration: 1 }}
+        transition={{ delay: 1.15, duration: 1 }}
       >
         <li
           className={
@@ -75,7 +67,7 @@ const GallerySelector = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.1 }}
+                transition={{ duration: 0.3 }}
               >
                 {selectedOption}
               </motion.span>
@@ -122,30 +114,29 @@ const GallerySelector = () => {
         </AnimatePresence>
       </motion.ul>
 
+      {/* galerías */}
       {selectedOption === "galerías/" && (
         <motion.ul
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
+          transition={{ delay: 0.4, duration: 1 }}
         >
           <li
             className={
-              selectedGalleryVersion === "seleccionar..."
-                ? "li-placeholder"
-                : ""
+              selectedGalleryOption === "seleccionar..." ? "li-placeholder" : ""
             }
           >
             <button onClick={() => setShowGalleryOptions(!showGalleryOptions)}>
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={selectedGalleryVersion}
-                  variants={fadeTextVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
+                  key={selectedGalleryOption}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  {selectedGalleryVersion}
+                  {selectedGalleryOption}
                 </motion.span>
               </AnimatePresence>
             </button>
@@ -161,7 +152,7 @@ const GallerySelector = () => {
                   hidden: {},
                 }}
               >
-                {selectedGalleryVersion !== "versión 1" && (
+                {selectedGalleryOption !== "versión 1" && (
                   <motion.li
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -173,12 +164,12 @@ const GallerySelector = () => {
                     </button>
                   </motion.li>
                 )}
-                {selectedGalleryVersion !== "versión 2" && (
+                {selectedGalleryOption !== "versión 2" && (
                   <motion.li
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.1, delay: 0.05 }}
+                    transition={{ duration: 0.1 }}
                   >
                     <button onClick={() => handleGallerySelect("versión 2")}>
                       versión 2
@@ -190,29 +181,29 @@ const GallerySelector = () => {
           </AnimatePresence>
         </motion.ul>
       )}
-
+      {/* videos */}
       {selectedOption === "videos/" && (
         <motion.ul
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          transition={{ delay: 0.4, duration: 1 }}
         >
           <li
             className={
-              selectedVideosVersion === "seleccionar..." ? "li-placeholder" : ""
+              selectedVideosOption === "seleccionar..." ? "li-placeholder" : ""
             }
           >
             <button onClick={() => setShowVideosOptions(!showVideosOptions)}>
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={selectedVideosVersion}
-                  variants={fadeTextVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
+                  key={selectedVideosOption}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  {selectedVideosVersion}
+                  {selectedVideosOption}
                 </motion.span>
               </AnimatePresence>
             </button>
@@ -228,7 +219,7 @@ const GallerySelector = () => {
                   hidden: {},
                 }}
               >
-                {selectedVideosVersion !== "versión 1" && (
+                {selectedVideosOption !== "versión 1" && (
                   <motion.li
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -240,12 +231,12 @@ const GallerySelector = () => {
                     </button>
                   </motion.li>
                 )}
-                {selectedVideosVersion !== "versión 2" && (
+                {selectedVideosOption !== "versión 2" && (
                   <motion.li
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.1, delay: 0.05 }}
+                    transition={{ duration: 0.1 }}
                   >
                     <button onClick={() => handleVideosSelect("versión 2")}>
                       versión 2
