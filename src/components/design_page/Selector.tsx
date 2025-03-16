@@ -321,12 +321,12 @@ const GallerySelector = () => {
       </AnimatePresence>
       <AnimatePresence>
         {selectedOption === "videos/" &&
-          selectedVideosOption === "versión 2" && (
+          selectedVideosOption === "versión 1" && (
             <motion.div
               key="videos-v1"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0.5 } }} // No delay for exit
+              exit={{ opacity: 0, transition: { duration: 0.2 } }} // No delay for exit
               transition={{ duration: 1, delay: 0.3 }}
             >
               <div>
@@ -337,12 +337,12 @@ const GallerySelector = () => {
       </AnimatePresence>
       <AnimatePresence>
         {selectedOption === "videos/" &&
-          selectedVideosOption === "versión 1" && (
+          selectedVideosOption === "versión 2" && (
             <motion.div
               key="videos-v2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0.5 } }} // No delay for exit
+              exit={{ opacity: 0, transition: { duration: 0 } }} // No delay for exit
               transition={{ duration: 1, delay: 0.3 }}
             >
               <div>
