@@ -110,4 +110,20 @@
   .add-comment-input {
     @apply w-full text-wrap p-2 border border-(--text)/10 dark:border-(--d-text)/20 rounded-md;
   }
+
+  .modal {
+    @apply fixed inset-0 w-full h-full flex flex-col items-center justify-center backdrop-blur-sm z-50;
+  }
+
+  .modal-content {
+    @apply p-4 m-auto flex flex-col items-center gap-4;
+  }
+
+  .modal-content img {
+    @apply w-full h-full max-w-[90%] max-h-[90%] object-contain;
+  }
+
+  .close-button {
+    @apply font-Inconsolata text-2xl cursor-pointer;
+  }
 }
