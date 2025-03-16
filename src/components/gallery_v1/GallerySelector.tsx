@@ -28,14 +28,22 @@ const GallerySelector = () => {
     setGallerySelectedOption(galleryversion);
     setShowGalleryOptions(false);
   };
+  const handleGalleryReset = () => {
+    setVideosSelectedOption("seleccionar...");
+    setShowVideosOptions(false);
+  };
 
-  // Gallery states
+  // Videos states
   const [selectedVideosOption, setVideosSelectedOption] =
     useState("seleccionar...");
   const [showVideosOptions, setShowVideosOptions] = useState(false);
   const handleVideosSelect = (videosversion: string) => {
     setVideosSelectedOption(videosversion);
     setShowVideosOptions(false);
+  };
+  const handleVideosReset = () => {
+    setGallerySelectedOption("seleccionar...");
+    setShowGalleryOptions(false);
   };
 
   return (
@@ -92,7 +100,12 @@ const GallerySelector = () => {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.1 }}
                 >
-                  <button onClick={() => handleOptionSelect("galerías/")}>
+                  <button
+                    onClick={() => {
+                      handleOptionSelect("galerías/");
+                      handleGalleryReset();
+                    }}
+                  >
                     galerías
                   </button>
                 </motion.li>
@@ -104,7 +117,12 @@ const GallerySelector = () => {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.1, delay: 0.05 }}
                 >
-                  <button onClick={() => handleOptionSelect("videos/")}>
+                  <button
+                    onClick={() => {
+                      handleOptionSelect("videos/");
+                      handleVideosReset();
+                    }}
+                  >
                     videos
                   </button>
                 </motion.li>
@@ -127,7 +145,11 @@ const GallerySelector = () => {
               selectedGalleryOption === "seleccionar..." ? "li-placeholder" : ""
             }
           >
-            <button onClick={() => setShowGalleryOptions(!showGalleryOptions)}>
+            <button
+              onClick={() => {
+                setShowGalleryOptions(!showGalleryOptions);
+              }}
+            >
               <AnimatePresence mode="wait">
                 <motion.span
                   key={selectedGalleryOption}
@@ -194,7 +216,11 @@ const GallerySelector = () => {
               selectedVideosOption === "seleccionar..." ? "li-placeholder" : ""
             }
           >
-            <button onClick={() => setShowVideosOptions(!showVideosOptions)}>
+            <button
+              onClick={() => {
+                setShowVideosOptions(!showVideosOptions);
+              }}
+            >
               <AnimatePresence mode="wait">
                 <motion.span
                   key={selectedVideosOption}
