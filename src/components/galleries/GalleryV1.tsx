@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import img1 from "../../assets/image-gallery/galleryv1-test/IMG_1638.jpg";
-import img4 from "../../assets/image-gallery/galleryv1-test/IMG_1665.jpg";
-import img3 from "../../assets/image-gallery/galleryv1-test/IMG_7233.jpg";
 import img2 from "../../assets/image-gallery/galleryv1-test/IMG_0312.jpg";
+import img3 from "../../assets/image-gallery/galleryv1-test/IMG_6612.jpg";
+import img4 from "../../assets/image-gallery/galleryv1-test/untitled-6-11.jpg";
 
 const GalleryV1 = () => {
   // State to handle modal visibility and selected image
