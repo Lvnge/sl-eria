@@ -120,7 +120,7 @@
   }
 
   .modal-content img {
-    @apply w-full h-full max-w-[90%] max-h-[90%] object-contain;
+    @apply w-full h-full max-w-[100%] max-h-[100%] object-contain;
   }
 
   .close-button {
