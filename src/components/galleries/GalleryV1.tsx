@@ -80,7 +80,7 @@ const GalleryV1 = () => {
                 transition={{ opacity: { duration: 0.6 } }} // Ensuring the exit and entrance animations have the same duration
               />
               <button className="close-button" onClick={closeModal}>
-                close
+                cerrar
               </button>
             </motion.div>
           </motion.div>
