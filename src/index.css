@@ -65,4 +65,17 @@
   .footer {
     @apply flex justify-center items-center mt-auto w-full h-24;
   }
+
+  .design-section {
+    @apply flex flex-col my-8 w-full;
+  }
+  .gallery-selector {
+    @apply flex w-full font-Cormorant text-lg text-(--text) dark:text-(--d-text);
+  }
+  .gallery-selector li {
+    @apply flex flex-col items-start gap-2;
+  }
+  .li-placeholder {
+    @apply opacity-50;
+  }
 }
