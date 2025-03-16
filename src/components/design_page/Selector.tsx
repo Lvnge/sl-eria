@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import GalleryV1 from "../gallery_v1/GalleryV1";
+import GalleryV1 from "../galleries/GalleryV1";
+import GalleryV2 from "../galleries/GalleryV2";
+
+import VideosV1 from "../videos/VideosV1";
+import VideosV2 from "../videos/VideosV2";
 
 const GallerySelector = () => {
   // sl-eria/ states
@@ -295,6 +299,54 @@ const GallerySelector = () => {
             >
               <div>
                 <GalleryV1 />
+              </div>
+            </motion.div>
+          )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {selectedOption === "galerías/" &&
+          selectedGalleryOption === "versión 2" && (
+            <motion.div
+              key="gallery-v1"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.5 } }} // No delay for exit
+              transition={{ duration: 1, delay: 0.3 }}
+            >
+              <div>
+                <GalleryV2 />
+              </div>
+            </motion.div>
+          )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {selectedOption === "videos/" &&
+          selectedVideosOption === "versión 2" && (
+            <motion.div
+              key="videos-v1"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.5 } }} // No delay for exit
+              transition={{ duration: 1, delay: 0.3 }}
+            >
+              <div>
+                <VideosV1 />
+              </div>
+            </motion.div>
+          )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {selectedOption === "videos/" &&
+          selectedVideosOption === "versión 1" && (
+            <motion.div
+              key="videos-v2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.5 } }} // No delay for exit
+              transition={{ duration: 1, delay: 0.3 }}
+            >
+              <div>
+                <VideosV2 />
               </div>
             </motion.div>
           )}
