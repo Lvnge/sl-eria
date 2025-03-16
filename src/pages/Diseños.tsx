@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import GalleryV1 from "../components/gallery_v1/GalleryV1";
+import Selector from "../components/design_page/Selector";
 
 const Diseños = () => {
   return (
@@ -22,7 +22,9 @@ const Diseños = () => {
         className="divider"
       ></motion.div>
       <div className="design-section">
-        <GalleryV1 />
+        <div>
+          <Selector />
+        </div>
       </div>
     </div>
   );
