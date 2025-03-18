@@ -15,7 +15,7 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
       <div className="flex flex-col items-center">
         <div className="navbar z-10">
           {/* Logo - remains the same at all screen sizes */}
-          <button>
+          <button className="pl-2">
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
@@ -62,7 +62,7 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }} // Match the CSS duration-400
+                transition={{ duration: 0.4 }}
                 className="flex items-center justify-center"
               >
                 {isDark ? (
