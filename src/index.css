@@ -26,13 +26,6 @@
   --transition-timing: ease-in-out;
 }
 
-.theme-transition * {
-  transition: background-color var(--transition-duration)
-      var(--transition-timing),
-    color var(--transition-duration) var(--transition-timing),
-    border-color var(--transition-duration) var(--transition-timing);
-}
-
 @layer base {
   body {
     @apply bg-(--background) dark:bg-(--d-background) text-(--text) dark:text-(--d-text);
@@ -55,6 +48,12 @@
 }
 
 @layer components {
+  .theme-transition * {
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing);
+  }
   .divider {
     @apply flex border-b-1 border-(--text)/10 dark:border-(--d-text)/20 w-full px-4;
   }
