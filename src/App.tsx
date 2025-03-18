@@ -6,50 +6,57 @@ import NavBar from "./components/navBar/NavBar";
 import Proyectos from "./pages/Proyectos";
 import Mision from "./pages/Mision";
 
-// Define the transition duration in one place
-const TRANSITION_DURATION = 400; // milliseconds
-
 function App() {
-  const [isDark, setIsDark] = useState<boolean | null>(null); // Initialize state with `null`
+  const [isDark, setIsDark] = useState<boolean | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // This will apply the theme based on the localStorage value, both on load and when the `isDark` state changes
+  // Initialize theme from localStorage or default to light mode
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
-    if (currentTheme) {
-      setIsDark(currentTheme === "dark");
-    } else {
-      // If no theme is stored, default to light mode
-      setIsDark(false);
-    }
-  }, []); // This effect only runs once when the app first loads
+    setIsDark(currentTheme === "dark" || false);
+  }, []);
 
-  // Apply the theme to the document
+  // Apply theme class when isDark changes
   useEffect(() => {
     if (isDark !== null) {
       document.documentElement.classList.toggle("dark", isDark);
     }
-  }, [isDark]); // This effect runs every time the `isDark` state changes
+  }, [isDark]);
 
-  // Toggle theme function with centralized transition
   const toggleTheme = () => {
-    // Start transition
-    setIsTransitioning(true);
-    document.body.classList.add("theme-transition");
+    if (isTransitioning) return;
 
-    // Toggle theme
+    setIsTransitioning(true);
     const newTheme = !isDark;
+
+    // Save preference
     localStorage.setItem("theme", newTheme ? "dark" : "light");
+
+    // Update iOS status bar
+    const metaTag = document.getElementById("apple-status-bar-style");
+    if (metaTag) {
+      metaTag.setAttribute(
+        "content",
+        newTheme ? "black-translucent" : "default"
+      );
+    }
+
+    // Force iOS repaint
+    document.body.style.display = "none";
+    requestAnimationFrame(() => {
+      document.body.style.display = "";
+    });
+
+    // Update theme state
     setIsDark(newTheme);
 
-    // Remove transition class after transition completes to prevent affecting other animations
+    // Reset transition state after animation completes
     setTimeout(() => {
-      document.body.classList.remove("theme-transition");
       setIsTransitioning(false);
-    }, TRANSITION_DURATION);
+    }, 300); // Match this with your CSS transition duration
   };
 
-  if (isDark === null) return <div>Loading...</div>; // Render a loading state until the theme is determined
+  if (isDark === null) return null; // Simpler loading state
 
   return (
     <>
