@@ -9,10 +9,10 @@ const Proyectos = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.3, delay: 0.5 }}
-      className="parent-container mt-12"
+      className="parent-container"
     >
       <div className="space-y-8 my-8 text-center">
-        <h1>Proyectos</h1>
+        <h1 className="mt-8">Proyectos</h1>
         <div className="divider"></div>
         <div className="border border-(--text)/10 dark:border-(--d-text)/20 rounded-md ">
           <Link to="https://silentlung.com" target="_blank">

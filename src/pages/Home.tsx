@@ -8,7 +8,7 @@ const Home = () => {
       transition={{ duration: 0.3, delay: 0.5 }}
       className="parent-container "
     >
-      <div className="flex flex-col items-center mt-12 w-full">
+      <div className="flex flex-col items-center mt-8 w-full">
         <div className="home-section">
           <h1 className="text-center">
             Tu&nbsp;

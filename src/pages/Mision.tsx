@@ -6,10 +6,10 @@ const Mision = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.3, delay: 0.5 }}
-      className="parent-container mt-12"
+      className="parent-container"
     >
       <div className="home-section text-center">
-        <h1>Misión</h1>
+        <h1 className="mt-8">Misión</h1>
       </div>
       <div className="divider"></div>
       <div className="mt-8 font-Lato text-justify space-y-4">

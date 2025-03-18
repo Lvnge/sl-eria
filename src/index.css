@@ -57,10 +57,10 @@
     @apply flex flex-col w-full items-center m-auto px-4 overflow-hidden;
   }
   .navbar {
-    @apply fixed flex max-w-90 w-full h-12 px-4 border-b-1 border-(--text)/10 dark:border-(--d-text)/20 justify-between items-center text-xl font-semibold bg-(--background) dark:bg-(--d-background) z-10 transition-colors duration-300;
+    @apply fixed flex w-full h-12 px-2 border-b-1 border-(--text)/10 dark:border-(--d-text)/20 justify-between items-center text-xl font-semibold bg-(--background) dark:bg-(--d-background) z-10 transition-colors duration-300;
   }
   .mobile-menu {
-    @apply flex flex-col fixed max-w-90 w-full h-screen left-0 right-0 m-auto bg-(--background) dark:bg-(--d-background) font-Cormorant gap-3 p-4 pt-14 text-lg z-9;
+    @apply fixed flex flex-col w-full h-full top-12 left-0 m-auto bg-(--background) dark:bg-(--d-background) font-Cormorant  text-lg z-9 transition-colors duration-300;
   }
   .custom-link {
     @apply underline;
@@ -73,7 +73,7 @@
   }
 
   .design-section {
-    @apply flex flex-col my-8 w-full;
+    @apply flex flex-col my-8   w-full;
   }
   .gallery-selector {
     @apply flex w-full h-16 font-Cormorant text-lg text-(--text) dark:text-(--d-text);

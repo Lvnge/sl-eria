@@ -3,9 +3,10 @@ import Selector from "../components/design_page/Selector";
 
 const Diseños = () => {
   return (
-    <div className="parent-container mt-12">
+    <div className="parent-container ">
       <div className="design-section text-center">
         <motion.h1
+          className="mt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
