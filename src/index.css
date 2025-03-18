@@ -24,6 +24,10 @@
 }
 
 @layer base {
+  body {
+    /* Make sure this matches your theme background */
+    padding-top: env(safe-area-inset-top);
+  }
   html {
     @apply scroll-smooth bg-(--background) dark:bg-(--d-background) text-(--text) dark:text-(--d-text) transition-colors duration-300;
   }
