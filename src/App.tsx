@@ -6,8 +6,12 @@ import NavBar from "./components/navBar/NavBar";
 import Proyectos from "./pages/Proyectos";
 import Mision from "./pages/Mision";
 
+// Define the transition duration in one place
+const TRANSITION_DURATION = 400; // milliseconds
+
 function App() {
   const [isDark, setIsDark] = useState<boolean | null>(null); // Initialize state with `null`
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // This will apply the theme based on the localStorage value, both on load and when the `isDark` state changes
   useEffect(() => {
@@ -27,29 +31,33 @@ function App() {
     }
   }, [isDark]); // This effect runs every time the `isDark` state changes
 
-  // Toggle theme function
+  // Toggle theme function with centralized transition
   const toggleTheme = () => {
-    // Add transition class to body
+    // Start transition
+    setIsTransitioning(true);
     document.body.classList.add("theme-transition");
 
-    // Toggle dark mode
-    if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
+    // Toggle theme
+    const newTheme = !isDark;
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
+    setIsDark(newTheme);
 
-    // Remove transition class after transition completes
-    window.setTimeout(() => {
+    // Remove transition class after transition completes to prevent affecting other animations
+    setTimeout(() => {
       document.body.classList.remove("theme-transition");
-    }, 400); // Match your transition duration
+      setIsTransitioning(false);
+    }, TRANSITION_DURATION);
   };
 
   if (isDark === null) return <div>Loading...</div>; // Render a loading state until the theme is determined
 
   return (
     <>
-      <NavBar isDark={isDark} toggleTheme={toggleTheme} />
+      <NavBar
+        isDark={isDark}
+        toggleTheme={toggleTheme}
+        isTransitioning={isTransitioning}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/diseños" element={<Diseños />} />

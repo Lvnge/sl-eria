@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NavBarProps {
   isDark: boolean;
   toggleTheme: () => void;
+  isTransitioning: boolean;
 }
 
-const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
+const NavBar = ({ isDark, toggleTheme, isTransitioning }: NavBarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="navbar px-2 z-10">
-          {/* Logo - remains the same at all screen sizes */}
-          <button className="pl-2">
+        <div className="navbar z-10">
+          <button>
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
@@ -29,93 +29,91 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
           <div className="hidden md:flex items-center gap-6">
             <Link
               to="/diseños"
-              className="italic font-Cormorant hover:text-opacity-70 transition-colors duration-400"
+              className="italic font-Cormorant hover:text-opacity-70"
             >
               diseños
             </Link>
             <Link
               to="/proyectos"
-              className="italic font-Cormorant hover:text-opacity-70 transition-colors duration-400"
+              className="italic font-Cormorant hover:text-opacity-70"
             >
               proyectos
             </Link>
             <Link
               to="/misión"
-              className="italic font-Cormorant hover:text-opacity-70 transition-colors duration-400"
+              className="italic font-Cormorant hover:text-opacity-70"
             >
               misión
             </Link>
           </div>
 
-          {/* Right side controls */}
           <div className="flex gap-2 items-center relative">
-            {/* Theme Toggle - same at all screen sizes */}
             <button
               onClick={toggleTheme}
-              className="flex items-center justify-center w-8 h-8"
+              disabled={isTransitioning}
               aria-label={
                 isDark ? "Switch to light mode" : "Switch to dark mode"
               }
+              className="flex items-center justify-center w-8 h-8"
             >
-              <motion.div
-                key={isDark ? "dark" : "light"}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0 }}
-                className="flex items-center justify-center"
-              >
-                {isDark ? (
-                  // Dark mode (sun icon)
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    className="transition-colors duration-400"
-                  >
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.5"
-                      d="M17 12a5 5 0 1 1-10 0a5 5 0 0 1 10 0M12 2c-.377.333-.905 1.2 0 2m0 16c.377.333.906 1.2 0 2m7.5-17.497c-.532-.033-1.575.22-1.496 1.495M5.496 17.5c.033.532-.22 1.575-1.496 1.496M5.003 4.5c-.033.532.22 1.576 1.497 1.497M18 17.503c.532-.032 1.575.208 1.496 1.414M22 12c-.333-.377-1.2-.905-2 0m-16-.5c-.333.377-1.2.906-2 0"
-                    />
-                  </svg>
-                ) : (
-                  // Light mode (moon icon)
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    className="transition-colors duration-400"
-                  >
-                    <path
-                      fill="currentColor"
-                      fillRule="evenodd"
-                      d="M12.97 3a8.02 8.02 0 0 0-4.054 7c0 4.418 3.522 8 7.866 8c1.146 0 2.236-.25 3.218-.698C18.39 19.544 15.787 21 12.849 21C7.962 21 4 16.97 4 12s3.962-9 8.849-9z"
-                    />
-                  </svg>
-                )}
-              </motion.div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={isDark ? "dark" : "light"}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="flex items-center justify-center"
+                >
+                  {isDark ? (
+                    // Dark mode (sun icon)
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        d="M17 12a5 5 0 1 1-10 0a5 5 0 0 1 10 0M12 2c-.377.333-.905 1.2 0 2m0 16c.377.333.906 1.2 0 2m7.5-17.497c-.532-.033-1.575.22-1.496 1.495M5.496 17.5c.033.532-.22 1.575-1.496 1.496M5.003 4.5c-.033.532.22 1.576 1.497 1.497M18 17.503c.532-.032 1.575.208 1.496 1.414M22 12c-.333-.377-1.2-.905-2 0m-16-.5c-.333.377-1.2.906-2 0"
+                        color="currentColor"
+                      />
+                    </svg>
+                  ) : (
+                    // Light mode (moon icon)
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        fillRule="evenodd"
+                        d="M12.97 3a8.02 8.02 0 0 0-4.054 7c0 4.418 3.522 8 7.866 8c1.146 0 2.236-.25 3.218-.698C18.39 19.544 15.787 21 12.849 21C7.962 21 4 16.97 4 12s3.962-9 8.849-9z"
+                      />
+                    </svg>
+                  )}
+                </motion.div>
+              </AnimatePresence>
             </button>
 
-            {/* Mobile Menu Toggle - visible on mobile, hidden on larger screens */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden flex items-center"
             >
-              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16 transition-colors duration-400 ease-in-out">
+              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16">
                 {menuOpen ? "cerrar" : "menú"}
               </p>
             </button>
           </div>
         </div>
-
-        {/* Mobile Menu Container */}
         <div>
+          {/* Mobile Menu */}
           <motion.div
             className="mobile-menu md:hidden"
             initial={{ y: "-100vh" }}
