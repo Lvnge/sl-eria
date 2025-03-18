@@ -24,9 +24,10 @@
 }
 
 @layer base {
-  body {
-    @apply bg-(--background) dark:bg-(--d-background) text-(--text) dark:text-(--d-text) transition-colors duration-300;
+  html {
+    @apply scroll-smooth bg-(--background) dark:bg-(--d-background) text-(--text) dark:text-(--d-text) transition-colors duration-300;
   }
+
   h1 {
     @apply font-Cormorant text-7xl;
   }
