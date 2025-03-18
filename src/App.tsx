@@ -29,9 +29,20 @@ function App() {
 
   // Toggle theme function
   const toggleTheme = () => {
-    const newTheme = !isDark;
-    localStorage.setItem("theme", newTheme ? "dark" : "light");
-    setIsDark(newTheme);
+    // Add transition class to body
+    document.body.classList.add("theme-transition");
+
+    // Toggle dark mode
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+
+    // Remove transition class after transition completes
+    window.setTimeout(() => {
+      document.body.classList.remove("theme-transition");
+    }, 400); // Match your transition duration
   };
 
   if (isDark === null) return <div>Loading...</div>; // Render a loading state until the theme is determined
