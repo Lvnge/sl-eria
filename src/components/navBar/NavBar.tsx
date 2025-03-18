@@ -62,7 +62,7 @@ const NavBar = ({ isDark, toggleTheme, isTransitioning }: NavBarProps) => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0 }}
                   className="flex items-center justify-center"
                 >
                   {isDark ? (
