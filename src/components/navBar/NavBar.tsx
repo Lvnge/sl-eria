@@ -13,7 +13,7 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="navbar z-10">
+        <div className="navbar px-2 z-10">
           {/* Logo - remains the same at all screen sizes */}
           <button className="pl-2">
             <Link
