@@ -58,7 +58,7 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="flex items-center justify-center"
               >
                 {isDark ? (
@@ -130,7 +130,7 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
             </Link>
           </div>
 
-          <div className="p-6 flex flex-col space-y-1 mt-auto pb-20 text-sm">
+          <div className="p-6 flex flex-col space-y-1 mt-auto b-20 text-sm">
             <p className="text-lg select-none">acerca de mí</p>
             <p className="select-none">román</p>
             <p className="flex select-none">
