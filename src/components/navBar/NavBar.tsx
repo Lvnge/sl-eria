@@ -6,6 +6,7 @@ interface NavBarProps {
   isDark: boolean;
   toggleTheme: () => void;
 }
+
 const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -13,6 +14,7 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
     <>
       <div className="flex flex-col items-center">
         <div className="navbar z-10">
+          {/* Logo - remains the same at all screen sizes */}
           <button>
             <Link
               to="/"
@@ -23,14 +25,44 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
             </Link>
           </button>
 
+          {/* Desktop Navigation - hidden on mobile, visible on larger screens */}
+          <div className="hidden md:flex items-center gap-6">
+            <Link
+              to="/diseños"
+              className="italic font-Cormorant hover:text-opacity-70 transition-colors duration-400"
+            >
+              diseños
+            </Link>
+            <Link
+              to="/proyectos"
+              className="italic font-Cormorant hover:text-opacity-70 transition-colors duration-400"
+            >
+              proyectos
+            </Link>
+            <Link
+              to="/misión"
+              className="italic font-Cormorant hover:text-opacity-70 transition-colors duration-400"
+            >
+              misión
+            </Link>
+          </div>
+
+          {/* Right side controls */}
           <div className="flex gap-2 items-center relative">
-            <button onClick={toggleTheme}>
+            {/* Theme Toggle - same at all screen sizes */}
+            <button
+              onClick={toggleTheme}
+              className="flex items-center justify-center w-8 h-8"
+              aria-label={
+                isDark ? "Switch to light mode" : "Switch to dark mode"
+              }
+            >
               <motion.div
                 key={isDark ? "dark" : "light"}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0 }}
+                transition={{ duration: 0.4 }} // Match the CSS duration-400
                 className="flex items-center justify-center"
               >
                 {isDark ? (
@@ -40,6 +72,7 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
                     width="16"
                     height="16"
                     viewBox="0 0 24 24"
+                    className="transition-colors duration-400"
                   >
                     <path
                       fill="none"
@@ -48,7 +81,6 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
                       strokeLinejoin="round"
                       strokeWidth="1.5"
                       d="M17 12a5 5 0 1 1-10 0a5 5 0 0 1 10 0M12 2c-.377.333-.905 1.2 0 2m0 16c.377.333.906 1.2 0 2m7.5-17.497c-.532-.033-1.575.22-1.496 1.495M5.496 17.5c.033.532-.22 1.575-1.496 1.496M5.003 4.5c-.033.532.22 1.576 1.497 1.497M18 17.503c.532-.032 1.575.208 1.496 1.414M22 12c-.333-.377-1.2-.905-2 0m-16-.5c-.333.377-1.2.906-2 0"
-                      color="currentColor"
                     />
                   </svg>
                 ) : (
@@ -58,6 +90,7 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
                     width="16"
                     height="16"
                     viewBox="0 0 24 24"
+                    className="transition-colors duration-400"
                   >
                     <path
                       fill="currentColor"
@@ -69,21 +102,26 @@ const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
               </motion.div>
             </button>
 
-            <button onClick={() => setMenuOpen(!menuOpen)}>
-              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16 transition-colors duration-0 ease-in-out">
+            {/* Mobile Menu Toggle - visible on mobile, hidden on larger screens */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden flex items-center"
+            >
+              <p className="italic font-Cormorant border-l-1 border-(--text)/10 dark:border-(--d-text)/20 min-w-16 transition-colors duration-400 ease-in-out">
                 {menuOpen ? "cerrar" : "menú"}
               </p>
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu Container */}
         <div>
-          {/* Mobile Menu */}
           <motion.div
-            className="mobile-menu "
-            initial={{ y: "-100vh" }} // Start off-screen, just above the visible area
-            animate={{ y: menuOpen ? 0 : "-100vh" }} // Slide in from the top, or slide out to the top
-            exit={{ y: "-100vh" }} // Slide out to the top when menuOpen is false
-            transition={{ type: "tween", duration: 0.55 }} // Smooth transition from top to bottom
+            className="mobile-menu md:hidden"
+            initial={{ y: "-100vh" }}
+            animate={{ y: menuOpen ? 0 : "-100vh" }}
+            exit={{ y: "-100vh" }}
+            transition={{ type: "tween", duration: 0.55 }}
           >
             <Link to="/diseños" onClick={() => setMenuOpen(false)}>
               diseños
