@@ -21,9 +21,6 @@
   --d-secondary: oklch(36.82% 0.034 303.97);
   --d-accent: oklch(45.19% 0.049 311.84);
   --d-buttonfont: oklch(90% 0.02 0);
-
-  --transition-duration: 400ms;
-  --transition-timing: ease-in-out;
 }
 
 @layer base {
@@ -48,12 +45,6 @@
 }
 
 @layer components {
-  .theme-transition * {
-    transition-property: color, background-color, border-color,
-      text-decoration-color, fill, stroke;
-    transition-duration: var(--transition-duration);
-    transition-timing-function: var(--transition-timing);
-  }
   .divider {
     @apply flex border-b-1 border-(--text)/10 dark:border-(--d-text)/20 w-full px-4;
   }
