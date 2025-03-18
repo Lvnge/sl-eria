@@ -5,10 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 interface NavBarProps {
   isDark: boolean;
   toggleTheme: () => void;
-  isTransitioning: boolean;
 }
 
-const NavBar = ({ isDark, toggleTheme, isTransitioning }: NavBarProps) => {
+const NavBar = ({ isDark, toggleTheme }: NavBarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -50,7 +49,6 @@ const NavBar = ({ isDark, toggleTheme, isTransitioning }: NavBarProps) => {
           <div className="flex gap-2 items-center relative">
             <button
               onClick={toggleTheme}
-              disabled={isTransitioning}
               aria-label={
                 isDark ? "Switch to light mode" : "Switch to dark mode"
               }

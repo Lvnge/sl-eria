@@ -8,7 +8,6 @@ import Mision from "./pages/Mision";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean | null>(null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Initialize theme from localStorage or default to light mode
   useEffect(() => {
@@ -24,9 +23,6 @@ function App() {
   }, [isDark]);
 
   const toggleTheme = () => {
-    if (isTransitioning) return;
-
-    setIsTransitioning(true);
     const newTheme = !isDark;
 
     // Save preference
@@ -49,22 +45,13 @@ function App() {
 
     // Update theme state
     setIsDark(newTheme);
-
-    // Reset transition state after animation completes
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 300); // Match this with your CSS transition duration
   };
 
   if (isDark === null) return null; // Simpler loading state
 
   return (
     <>
-      <NavBar
-        isDark={isDark}
-        toggleTheme={toggleTheme}
-        isTransitioning={isTransitioning}
-      />
+      <NavBar isDark={isDark} toggleTheme={toggleTheme} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/diseños" element={<Diseños />} />
