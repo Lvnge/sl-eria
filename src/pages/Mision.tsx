@@ -12,7 +12,7 @@ const Mision = () => {
         <h1 className="mt-8">Misión</h1>
       </div>
       <div className="divider"></div>
-      <div className="mt-8 font-Lato text-justify space-y-4">
+      <div className="mt-8 font-Cormorant text-justify space-y-4">
         <p>
           La misión de SL-Eria es ofrecer a los artistas una forma accesible y
           personalizada de mostrar su trabajo en línea.
