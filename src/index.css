@@ -218,4 +218,136 @@
   .bento-item {
     @apply hover:translate-y-[-2px];
   }
+  /* Custom Video Player Styles */
+
+  .custom-video-player {
+    @apply relative w-full overflow-hidden bg-black rounded-lg;
+    aspect-ratio: 16/9; /* Default landscape ratio */
+  }
+
+  /* Video orientation variants */
+  .video-landscape {
+    @apply aspect-[16/9];
+  }
+
+  .video-portrait {
+    @apply aspect-[9/16] max-w-md mx-auto;
+  }
+
+  /* Video element */
+  .video-element {
+    @apply w-full h-full object-contain;
+  }
+
+  /* Controls container */
+  .video-controls-container {
+    @apply absolute inset-0 flex flex-col justify-between p-3 bg-gradient-to-t from-black/70 to-transparent;
+    pointer-events: none; /* Allow clicks to pass through to video */
+  }
+
+  /* Make direct children of controls container clickable */
+  .video-controls-container > * {
+    pointer-events: auto;
+  }
+
+  /* Video title bar */
+  .video-title-bar {
+    @apply w-full flex justify-between items-center mb-auto;
+  }
+
+  .video-title {
+    @apply font-Inconsolata font-light text-sm text-white/90 truncate;
+  }
+
+  /* Progress controls */
+  .progress-container {
+    @apply relative w-full h-4 cursor-pointer my-2;
+  }
+
+  .progress-bg {
+    @apply absolute inset-0 top-1/2 -translate-y-1/2 h-1 bg-white/20 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply absolute top-0 left-0 h-full bg-white/80 rounded-full;
+  }
+
+  .progress-handle {
+    @apply absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full hidden;
+  }
+
+  .progress-container:hover .progress-handle {
+    @apply block;
+  }
+
+  /* Controls row */
+  .controls-row {
+    @apply w-full flex items-center justify-between space-x-4;
+  }
+
+  /* Control button */
+  .control-button {
+    @apply flex items-center justify-center text-white/90 transition-colors w-8 h-8 rounded-full bg-transparent hover:bg-white/20;
+  }
+
+  /* Time display */
+  .time-display {
+    @apply font-Inconsolata text-xs text-white/90 tabular-nums;
+  }
+
+  /* Volume controls */
+  .volume-controls {
+    @apply flex items-center space-x-2;
+  }
+
+  .volume-slider {
+    @apply w-16 h-1 rounded-full appearance-none bg-white/20;
+  }
+
+  .volume-slider::-webkit-slider-thumb {
+    @apply w-3 h-3 rounded-full bg-white;
+    -webkit-appearance: none;
+  }
+
+  .volume-slider::-moz-range-thumb {
+    @apply w-3 h-3 rounded-full bg-white border-0;
+  }
+
+  /* Play overlay (for mobile) */
+  .play-overlay {
+    @apply absolute inset-0 flex items-center justify-center bg-black/30;
+    z-index: 10;
+  }
+
+  .play-button-large {
+    @apply flex items-center justify-center w-16 h-16 rounded-full bg-white/20 text-white transition-transform hover:scale-110;
+  }
+
+  /* Media queries for responsive adjustments */
+  @media (max-width: 640px) {
+    .controls-row {
+      @apply space-x-2;
+    }
+
+    .volume-controls {
+      @apply hidden;
+    }
+
+    .time-display {
+      @apply text-[10px];
+    }
+
+    .video-controls-container {
+      @apply p-2;
+    }
+  }
+
+  /* Ensure proper fullscreen behavior */
+  .custom-video-player:fullscreen {
+    @apply w-screen h-screen;
+  }
+
+  .custom-video-player:fullscreen .video-element {
+    @apply object-contain;
+  }
 }
