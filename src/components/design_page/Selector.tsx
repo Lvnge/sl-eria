@@ -307,7 +307,7 @@ const GallerySelector = () => {
         {selectedOption === "galerías/" &&
           selectedGalleryOption === "versión 2" && (
             <motion.div
-              key="gallery-v1"
+              key="gallery-v2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.5 } }} // No delay for exit
