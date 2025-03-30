@@ -331,10 +331,11 @@ const GallerySelector = () => {
             >
               <div>
                 <VideosV1
-                  src="videos/IMG_7459.mp4"
+                  src="/IMG_7459.mp4"
                   poster="/path/to/any-poster.jpg"
                   title="IMG_7459.mp4"
                   orientation="auto"
+                  autoPlay={false}
                 />
               </div>
             </motion.div>

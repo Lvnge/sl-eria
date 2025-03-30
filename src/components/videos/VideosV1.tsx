@@ -24,6 +24,7 @@ const VideosV1 = ({
   const videoContainerRef = useRef<HTMLDivElement>(null);
 
   // States
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -253,6 +254,9 @@ const VideosV1 = ({
   return (
     <div
       ref={videoContainerRef}
+      // Add these attributes to your video container div
+      onTouchStart={() => setShowControls(true)}
+      onTouchEnd={() => resetControlsTimer()}
       className={`custom-video-player ${
         videoOrientation === "portrait" ? "video-portrait" : "video-landscape"
       }`}
@@ -269,6 +273,9 @@ const VideosV1 = ({
         playsInline
         onClick={togglePlay}
         className="video-element"
+        // Update the video element with these attributes
+        muted={autoPlay} // Mobile browsers require muted for autoplay
+        preload="metadata" // Load metadata first
       />
 
       {/* Video Controls */}
