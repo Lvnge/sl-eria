@@ -331,7 +331,7 @@ const GallerySelector = () => {
             >
               <div>
                 <VideosV1
-                  src="/IMG_7459.mp4"
+                  src="/edit2.mp4"
                   poster="/path/to/any-poster.jpg"
                   title="IMG_7459.mp4"
                   orientation="auto"
